@@ -1,0 +1,61 @@
+{
+	"dxt_version": "0.1",
+	"name": "esa",
+	"version": "0.1.0",
+	"description": "esa MCP server",
+	"author": {
+		"name": "Tomohiro Ishii",
+		"email": "tommy.ish@icloud.com"
+	},
+	"server": {
+		"type": "node",
+		"entry_point": "server/index.js",
+		"mcp_config": {
+			"command": "node",
+			"args": ["${__dirname}/server/index.js"],
+			"env": {
+				"ESA_ACCESS_TOKEN": "${user_config.esa_access_token}"
+			}
+		}
+	},
+	"tools": [
+		{
+			"name": "fetch-teams",
+			"description": "Fetch esa teams"
+		},
+		{
+			"name": "fetch-posts",
+			"description": "Fetch esa posts"
+		},
+		{
+			"name": "fetch-post",
+			"description": "Fetch esa post"
+		},
+		{
+			"name": "post-post",
+			"description": "Post esa post"
+		},
+		{
+			"name": "edit-post",
+			"description": "Edit esa post"
+		},
+		{
+			"name": "delete-post",
+			"description": "Delete esa post"
+		}
+	],
+	"user_config": {
+		"esa_access_token": {
+			"type": "string",
+			"title": "esa Access Token",
+			"description": "esa access token",
+			"required": true,
+			"sensitive": true
+		}
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tommy-ish/esa.git"
+	}
+}
